@@ -3,11 +3,14 @@ package main
 import "fmt"
 
 func canIDrink(age int) bool {
-	if koreanAge := age + 2; koreanAge < 20 { //조건문 내부에서 변수 생성 가능
-		//variable expression
+	switch { //여기도 variable expression을 사용 가능
+	case age < 18: //else-if 를 남발하지 않기 위해 이렇게도 사용 가능
+		return true
+	case age == 18:
+		return true
+	default:
 		return false
 	}
-	return true
 
 }
 
