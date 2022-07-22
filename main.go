@@ -3,14 +3,10 @@ package main
 import (
 	"fmt"
 
-	"github.com/on-stu/gojobs/accounts"
+	"github.com/on-stu/gojobs/dictionary"
 )
 
 func main() {
-	account := accounts.NewAccount("minsu")
-	fmt.Println(account.Balance())
-	account.Deposit(10000)
-	fmt.Println(account.Balance())
-
-	fmt.Println(account)
+	dict := dictionary.Dictionary()
+	fmt.Println(dict)
 }
