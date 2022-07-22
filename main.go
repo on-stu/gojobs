@@ -1,13 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
 
-type person struct {
-	name string
-	age  int
-}
+	"github.com/on-stu/gojobs/accounts"
+)
 
 func main() {
-	minsu := person{name: "minsu", age: 18}
-	fmt.Println(minsu.age)
+	account := accounts.NewAccount("minsu")
+	fmt.Println(account.Balance())
+	account.Deposit(10000)
+	fmt.Println(account.Balance())
+	err := account.Withdraw(100001)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(account.Balance())
 }
