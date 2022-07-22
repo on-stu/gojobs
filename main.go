@@ -2,17 +2,15 @@ package main
 
 import "fmt"
 
-func superAdd(numbers ...int) int {
-	total := 0
-
-	for _, number := range numbers {
-		total += number
+func canIDrink(age int) bool {
+	if koreanAge := age + 2; koreanAge < 20 { //조건문 내부에서 변수 생성 가능
+		return false
 	}
+	return true
 
-	return total
 }
 
 func main() {
-	result := superAdd(1, 2, 1000, 4, 5, 6)
+	result := canIDrink(17)
 	fmt.Println(result)
 }
