@@ -7,6 +7,12 @@ import (
 )
 
 func main() {
-	dict := dictionary.Dictionary()
-	fmt.Println(dict)
+	myDictionary := dictionary.Dictionary{"secondd": "2"}
+	myDictionary.Add("second", "wow")
+	definition, err := myDictionary.Search("second")
+	if err == nil {
+		fmt.Println(definition)
+	} else {
+		fmt.Println("error")
+	}
 }
